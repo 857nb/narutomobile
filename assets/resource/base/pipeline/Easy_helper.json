@@ -549,11 +549,20 @@
         }
     },
     "easy_helper_team_dash_sweep": {
+        "recognition": "OCR",
+        "roi": [
+            795,
+            486,
+            474,
+            98
+        ],
+        "expected": "扫荡",
         "pre_delay": 0,
         "post_delay": 0,
         "next": [
             "check_no_easy_helper_team_dash_sweep",
-            "[JumpBack]get_easy_helper_team_dash_sweep"
+            "[JumpBack]get_easy_helper_team_dash_sweep",
+            "easy_helper_back_to_team_dash_sweep"
         ]
     },
     "check_no_easy_helper_team_dash_sweep": {
