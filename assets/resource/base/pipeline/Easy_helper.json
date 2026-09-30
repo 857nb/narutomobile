@@ -622,7 +622,8 @@
         "post_wait_freezes": 300,
         "post_delay": 0,
         "next": [
-            "easy_helper_back_to_team_dash_sweep"
+            "easy_helper_back_to_team_dash_sweep",
+            "easy_helper_team_dash_sweep"
         ],
         "focus": {
             "Node.Action.Starting": "<font color=\"DeepSkyBlue\">继续扫荡</font>"
