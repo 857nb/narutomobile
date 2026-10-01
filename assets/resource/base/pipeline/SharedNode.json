@@ -1275,7 +1275,9 @@
             59
         ],
         "expected": [
-            "确定"
+            "确定",
+            "OK",
+            "ok"
         ],
         "pre_delay": 0,
         "action": "InputText",
