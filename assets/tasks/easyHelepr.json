@@ -22,6 +22,7 @@
             "default_case": "Yes",
             "cases": [
                 {
+                    "option": ["轻松助手扫荡策略"],
                     "name": "Yes",
                     "pipeline_override": {
                         "secret_realm_celebreate": {
@@ -97,6 +98,42 @@
                             "next": [
                                 "easy_helper_team_dash_sweep_check_4x",
                                 "easy_helper_team_dash_sweep_checked_4x"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "轻松助手扫荡策略": {
+            "type": "select",
+            "default_case": "轻松助手扫荡秘境和小队",
+            "cases": [
+                {
+                    "name": "轻松助手扫荡秘境和小队"
+                },
+                {
+                    "name": "轻松助手扫荡秘境",
+                    "pipeline_override": {
+                        "easy_helper_team_dash_sweep": {
+                            "next": [
+                                "back_main_screen_and_stop"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "轻松助手扫荡小队",
+                    "pipeline_override": {
+                        "easy_helper_privilege_done": {
+                            "next": [
+                                "easy_helper_team_dash_sweep",
+                                "easy_helper_privilege_done"
+                            ]
+                        },
+                        "easy_helper_privilege_undone": {
+                            "next": [
+                                "easy_helper_team_dash_sweep",
+                                "easy_helper_privilege_undone"
                             ]
                         }
                     }
