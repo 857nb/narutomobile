@@ -57,6 +57,9 @@
                                 "easy_helper_done",
                                 "[JumpBack]back_main_screen"
                             ]
+                        },
+                        "secret_realm_win_back_secret_realm": {
+                            "on_error": "easy_helper"
                         }
                     }
                 },
