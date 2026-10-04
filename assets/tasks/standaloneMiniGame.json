@@ -1,6 +1,13 @@
 {
     "task": [
         {
+            "name": "火热手感",
+            "entry": "let_me_cook",
+            "group": [
+                "event"
+            ]
+        },
+        {
             "name": "速战速决",
             "entry": "blitz",
             "group": [
