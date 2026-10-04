@@ -609,7 +609,8 @@
             "[JumpBack]battle_tips",
             "stronghold_in_stronghold",
             "[JumpBack]stronghold_match_win",
-            "stronghold_finished"
+            "stronghold_finished",
+            "stronghold_end"
         ]
     }
 }
