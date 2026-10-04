@@ -108,22 +108,38 @@
         "next": [
             "let_me_cook_hand_check",
             "let_me_cook_step_check",
+            "let_me_cook_without_step",
             "let_me_cook_shoot",
             "let_me_cook_burst"
         ]
     },
     "let_me_cook_hand_check": {
-        "recognition": "TemplateMatch",
-        "roi": [
-            283,
-            565,
-            153,
-            37
+        "recognition": "And",
+        "all_of": [
+            {
+                "recognition": "TemplateMatch",
+                "roi": [
+                    444,
+                    562,
+                    39,
+                    41
+                ],
+                "template": "Let_me_cook/check.png",
+                "green_mask": true
+            },
+            {
+                "recognition": "TemplateMatch",
+                "roi": [
+                    283,
+                    565,
+                    153,
+                    37
+                ],
+                "template": "Let_me_cook/exactly.png",
+                "green_mask": true,
+                "threshold": 0.9
+            }
         ],
-        "template": "Let_me_cook/exactly.png",
-        "green_mask": true,
-        "threshold": 0.9,
-        "pre_wait_freezes": 300,
         "pre_delay": 0,
         "post_delay": 0,
         "next": [
@@ -154,6 +170,7 @@
             "let_me_cook_step_check",
             "let_me_cook_without_step",
             "let_me_cook_shoot",
+            "let_me_cook_step_check_revert",
             "let_me_cook_burst"
         ]
     },
@@ -180,45 +197,78 @@
         "next": [
             "let_me_cook_step_check",
             "let_me_cook_without_step",
+            "let_me_cook_step_check_revert",
             "let_me_cook_hand_check",
             "let_me_cook_play"
         ]
     },
     "let_me_cook_stop_hand": {
-        "recognition": "TemplateMatch",
-        "roi": [
-            444,
-            562,
-            39,
-            41
+        "recognition": "And",
+        "all_of": [
+            {
+                "recognition": "TemplateMatch",
+                "roi": [
+                    444,
+                    562,
+                    39,
+                    41
+                ],
+                "template": "Let_me_cook/check.png",
+                "green_mask": true
+            },
+            {
+                "recognition": "TemplateMatch",
+                "roi": [
+                    283,
+                    565,
+                    153,
+                    37
+                ],
+                "template": "Let_me_cook/exactly.png",
+                "green_mask": true,
+                "threshold": 0.9
+            }
         ],
-        "template": "Let_me_cook/check.png",
-        "green_mask": true,
         "pre_delay": 0,
         "action": "Click",
         "post_wait_freezes": 300,
         "post_delay": 0,
         "next": [
+            "let_me_cook_without_step",
             "let_me_cook_stop_hand",
             "let_me_cook_step_check",
-            "let_me_cook_without_step",
             "let_me_cook_hand_check_revert",
             "let_me_cook_shoot",
             "let_me_cook_burst"
         ]
     },
     "let_me_cook_step_check": {
-        "recognition": "TemplateMatch",
-        "roi": [
-            604,
-            565,
-            153,
-            37
+        "recognition": "And",
+        "all_of": [
+            {
+                "recognition": "TemplateMatch",
+                "roi": [
+                    760,
+                    564,
+                    44,
+                    39
+                ],
+                "template": "Let_me_cook/check.png",
+                "green_mask": true
+            },
+            {
+                "recognition": "TemplateMatch",
+                "roi": [
+                    604,
+                    565,
+                    153,
+                    37
+                ],
+                "template": "Let_me_cook/exactly.png",
+                "green_mask": true,
+                "threshold": 0.9
+            }
         ],
-        "template": "Let_me_cook/exactly.png",
-        "green_mask": true,
-        "threshold": 0.9,
-        "pre_wait_freezes": 300,
         "pre_delay": 0,
         "post_delay": 0,
         "next": [
@@ -242,6 +292,7 @@
         "pre_delay": 300,
         "post_delay": 0,
         "next": [
+            "let_me_cook_without_step",
             "let_me_cook_stop_step_revert",
             "let_me_cook_shoot",
             "let_me_cook_burst"
@@ -268,21 +319,39 @@
         ],
         "post_delay": 300,
         "next": [
+            "let_me_cook_without_step",
             "let_me_cook_stop_step_revert",
             "let_me_cook_shoot",
             "let_me_cook_burst"
         ]
     },
     "let_me_cook_stop_step": {
-        "recognition": "TemplateMatch",
-        "roi": [
-            760,
-            564,
-            44,
-            39
+        "recognition": "And",
+        "all_of": [
+            {
+                "recognition": "TemplateMatch",
+                "roi": [
+                    760,
+                    564,
+                    44,
+                    39
+                ],
+                "template": "Let_me_cook/check.png",
+                "green_mask": true
+            },
+            {
+                "recognition": "TemplateMatch",
+                "roi": [
+                    604,
+                    565,
+                    153,
+                    37
+                ],
+                "template": "Let_me_cook/exactly.png",
+                "green_mask": true,
+                "threshold": 0.9
+            }
         ],
-        "template": "Let_me_cook/check.png",
-        "green_mask": true,
         "pre_delay": 0,
         "action": "Click",
         "post_wait_freezes": 300,
