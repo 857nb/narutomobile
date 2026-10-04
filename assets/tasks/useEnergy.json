@@ -19,7 +19,7 @@
             "cases": [
                 {
                     "name": "精英副本",
-                    "option": ["精英副本一键全选"]
+                    "option": ["精英副本策略"]
                 },
                 {
                     "name": "做装备",
@@ -50,13 +50,15 @@
                 }
             ]
         },
-        "精英副本一键全选": {
-            "type": "switch",
-            "default_case": "Yes",
-            "description": "开启后会勾选一键全选后再扫荡",
+        "精英副本策略": {
+            "type": "select",
+            "default_case": "一键全选",
             "cases": [
                 {
-                    "name": "Yes",
+                    "name": "勾选上次扫荡"
+                },
+                {
+                    "name": "一键全选",
                     "pipeline_override": {
                         "use_energy_ez_sweep_entry": {
                             "next": [
@@ -68,7 +70,137 @@
                     }
                 },
                 {
-                    "name": "No"
+                    "name": "自定义筛选",
+                    "pipeline_override": {
+                        "use_energy_ez_sweep_entry": {
+                            "next": [
+                                "use_energy_check_level_option",
+                                "use_energy_explan_level_option",
+                                "[JumpBack]use_energy_ez_sweep_entry"
+                            ]
+                        }
+                    },
+                    "option": [
+                        "精英副本等级筛选",
+                        "精英副本星级筛选"
+                    ]
+                }
+            ]
+        },
+        "精英副本等级筛选": {
+            "type": "select",
+            "default_case": "全部等级",
+            "cases": [
+                {
+                    "name": "全部等级"
+                },
+                {
+                    "name": "A级",
+                    "pipeline_override": {
+                        "use_energy_check_level_option": {
+                            "expected": "A级"
+                        },
+                        "use_energy_select_level_option": {
+                            "expected": "A级"
+                        }
+                    }
+                },
+                {
+                    "name": "B级",
+                    "pipeline_override": {
+                        "use_energy_check_level_option": {
+                            "expected": "B级"
+                        },
+                        "use_energy_select_level_option": {
+                            "expected": "B级"
+                        }
+                    }
+                },
+                {
+                    "name": "C级",
+                    "pipeline_override": {
+                        "use_energy_check_level_option": {
+                            "expected": "C级"
+                        },
+                        "use_energy_select_level_option": {
+                            "expected": "C级"
+                        }
+                    }
+                }
+            ]
+        },
+        "精英副本星级筛选": {
+            "type": "select",
+            "default_case": "全部星级",
+            "cases": [
+                {
+                    "name": "全部星级"
+                },
+                {
+                    "name": "5星",
+                    "pipeline_override": {
+                        "use_energy_check_star_option": {
+                            "expected": "5星"
+                        },
+                        "use_energy_select_star_option": {
+                            "expected": "5星"
+                        }
+                    }
+                },
+                {
+                    "name": "4星",
+                    "pipeline_override": {
+                        "use_energy_check_star_option": {
+                            "expected": "4星"
+                        },
+                        "use_energy_select_star_option": {
+                            "expected": "4星"
+                        }
+                    }
+                },
+                {
+                    "name": "3星",
+                    "pipeline_override": {
+                        "use_energy_check_star_option": {
+                            "expected": "3星"
+                        },
+                        "use_energy_select_star_option": {
+                            "expected": "3星"
+                        }
+                    }
+                },
+                {
+                    "name": "2星",
+                    "pipeline_override": {
+                        "use_energy_check_star_option": {
+                            "expected": "2星"
+                        },
+                        "use_energy_select_star_option": {
+                            "expected": "2星"
+                        }
+                    }
+                },
+                {
+                    "name": "1星",
+                    "pipeline_override": {
+                        "use_energy_check_star_option": {
+                            "expected": "1星"
+                        },
+                        "use_energy_select_star_option": {
+                            "expected": "1星"
+                        }
+                    }
+                },
+                {
+                    "name": "未招募",
+                    "pipeline_override": {
+                        "use_energy_check_star_option": {
+                            "expected": "招募"
+                        },
+                        "use_energy_select_star_option": {
+                            "expected": "招募"
+                        }
+                    }
                 }
             ]
         },
